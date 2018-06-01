@@ -1,0 +1,23 @@
+service: aws-nodejs
+
+provider:
+  name: aws
+  runtime: nodejs6.10
+
+plugins:
+  - local-plugin
+
+package:
+  excludeDevDependencies: false # saves a bit of time, nothing to do with the issue
+
+custom:
+  test:
+    Fn::Join:
+      - ':'
+      - - 'arn:aws:kinesis:us-west-2'
+        - Ref: 'AWS::AccountId'
+        - 'asdf'
+
+functions:
+  hello:
+    handler: handler.hello

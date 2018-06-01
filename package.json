@@ -1,0 +1,12 @@
+{
+  "name": "serverless-ref-issue",
+  "description": "",
+  "version": "1.0.0",
+  "scripts": {
+    "test": "sls package && node check-template.js"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "serverless": "^1.27.3"
+  }
+}
